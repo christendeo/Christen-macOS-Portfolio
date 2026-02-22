@@ -24,8 +24,10 @@ const renderText = (text, className, baseWeight = 400) => {
 
 // For hovering text animation
 const setupTextHover = (container, type) => {
+
+    // Return an empty function if container does not exist
     if (!container) {
-        return;
+        return () => {};
     }
 
     const letters = container.querySelectorAll("span");

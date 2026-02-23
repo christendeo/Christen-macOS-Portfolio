@@ -1,0 +1,36 @@
+import React from "react";
+import useWindowStore from "#store/window.js";
+import {useRef} from "react";
+
+const WindowWrapper = (Component, windowKey) => {
+    const Wrapped = (props) => {
+        const {focusWindow, windows} = useWindowStore();
+        const windowState = windows[windowKey];
+
+        // Catch null
+        if (!windowState || !windowState.isOpen) {
+            return null;
+        }
+
+        // const {isOpen, zIndex} = windows[windowKey];
+        const {zIndex} = windowState;
+        const ref = useRef(null);
+
+        return (
+            <section
+                id={windowKey}
+                ref={ref}
+                style={{zIndex}}
+                className="absolute"
+                onClick={() => focusWindow(windowKey)}
+            >
+                <Component {...props} />
+            </section>
+        );
+    };
+
+    Wrapped.displayName = `WindowWrapper(${Component.displayName || Component.name || "Component"})`;
+    return Wrapped;
+};
+
+export default WindowWrapper;

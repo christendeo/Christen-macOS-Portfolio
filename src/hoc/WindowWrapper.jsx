@@ -5,15 +5,7 @@ import {useRef} from "react";
 const WindowWrapper = (Component, windowKey) => {
     const Wrapped = (props) => {
         const {focusWindow, windows} = useWindowStore();
-        const windowState = windows[windowKey];
-
-        // Catch null
-        if (!windowState || !windowState.isOpen) {
-            return null;
-        }
-
-        // const {isOpen, zIndex} = windows[windowKey];
-        const {zIndex} = windowState;
+        const {isOpen, zIndex} = windows[windowKey];
         const ref = useRef(null);
 
         return (

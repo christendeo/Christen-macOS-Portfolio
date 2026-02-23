@@ -17,6 +17,7 @@ const Terminal = () => {
 
                 <div className="label">
                     <p className="w-32">Category</p>
+                    <p>Technologies</p>
                 </div>
             </div>
         </>
@@ -26,3 +27,5 @@ const Terminal = () => {
 // Wrap into high-order component
 const TerminalWindow = WindowWrapper(Terminal, "terminal");
 export default TerminalWindow;
+
+// export default Terminal;

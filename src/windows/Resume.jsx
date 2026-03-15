@@ -24,7 +24,7 @@ const Resume = () => {
                 <h2>Resume.pdf</h2>
 
                 <a
-                    href="files/resume.pdf"
+                    href="files/christendeo-resume-2026.pdf"
                     download
                     className="cursor-pointer"
                     title="Download Resume"
@@ -35,7 +35,7 @@ const Resume = () => {
 
             {/*To display Resume pdf*/}
             <Document
-                file="files/resume.pdf"
+                file="files/christendeo-resume-2026.pdf"
                 onLoadError={(error) => setLoadError(error)}
                 loading={<div>Loading Resume...</div>}
                 error={<div>Oh no! Something went wrong. Please try downloading instead.</div>}

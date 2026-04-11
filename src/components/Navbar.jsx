@@ -7,7 +7,7 @@ const Navbar = () => {
 
     return <nav>
         <div>
-            <img alt="logo" src="/public/images/logo.svg" />
+            <img alt="logo" src="/images/logo.svg" />
             <p className="font-bold">Christen's Portfolio</p>
             <ul>
                 {/*Used parenthesis to auto return li bullet point*/}
